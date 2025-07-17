@@ -21,7 +21,6 @@ main{
   z-index: -1; /* 背景に配置 */
 }
 
-
   .character-container {
     position: relative;
     width: 100%;
@@ -133,11 +132,11 @@ main{
       width: 100%;
     }
   }
-  
+
   /* ロゴ */
 .logo {
   position: fixed;
-  top: 10px;
+  top: 20px;
   left: 10px;
 }
 
@@ -371,6 +370,7 @@ main{
   cursor: pointer;
   z-index: 1000;
   animation: shake 2s ;
+  touch-action: manipulation;
 }
 
 .request-toggle img {
@@ -439,7 +439,7 @@ main{
 }
 
    /* 右上にボタンを固定 */
-   #menu-button {
+  #menu-button {
   position: fixed;
   top: 20px;        
   right: 20px;       
@@ -466,9 +466,10 @@ main{
 }
   /* メニュー表示のアニメーション */
   .hamburger {
-    width: 40px; /* お好みで */
+    width: 40px; 
     transition: transform 0.2s ease;
     cursor: pointer;
+    touch-action: manipulation;
   }
   
   /* ホバー時（PC） */
@@ -498,6 +499,10 @@ main{
     white-space: nowrap;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
+  /* タップ・クリックしたときに沈む */
+  .menu-panel a:active {
+  transform: scale(0.95);
+}
 
   /* 画面幅が768px以上（タブレット・PCなど）のとき調整 */
 @media screen and (min-width: 500px) {
@@ -535,9 +540,17 @@ main{
   .about-title {
     font-family: "vdl-megamaru", sans-serif;
     font-size: 25px;
-    margin: 50px ;
+    margin: 80px ;
     color:#85baff;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .about-subtitle {
+    font-family: "vdl-megamaru", sans-serif;
+    font-size: 15px;
+    margin: 10px ;
+    color:#85baff;
+    margin-bottom: 20px;
   }
    /* 画面幅が768px以上（タブレット・PCなど）のとき */
 @media screen and (min-width: 768px) {
@@ -545,6 +558,25 @@ main{
     font-size: 50px;
   }
 }
+  /* 画面幅が768px以上（タブレット・PCなど）のとき */
+   @media screen and (min-width: 768px) {
+    .about-subtitle {
+      font-size: 25px;
+    }
+  }
+
+.text{
+  font-family: "vdl-megamaru", sans-serif;
+  font-size: 10px;
+  color:#85baff;
+  margin-bottom: 40px;
+}
+   /* 画面幅が768px以上（タブレット・PCなど）のとき */
+   @media screen and (min-width: 768px) {
+    .text {
+      font-size: 20px;
+    }
+  }
   
   .about-buttons {
     font-family: "vdl-megamaru", sans-serif;
@@ -582,6 +614,118 @@ main{
     gap: 20px;
   }
   
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 50px;
+  }
+
+  .profile img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 2px;
+    border: 3px solid #ddd;
+  }
+
+  .profile-text {
+    font-family: "vdl-megamaru", sans-serif;
+    font-size: 8px;
+    flex: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    .profile {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .profile img {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    .profile-text {
+      font-size: 15px;
+    }
+  }
+
+  .tools-summary {
+    font-family: "vdl-megamaru", sans-serif;
+    color: #0077cc; 
+    cursor: pointer;  
+    font-size: 8px;
+  }
+
+  /* 画面幅が768px以上（タブレット・PCなど）のとき */
+  @media screen and (min-width: 768px) {
+    .tools-summary  {
+      font-size: 15px;
+    }
+  }
+
+  .tools-list li {
+    list-style-position: inside;
+    padding-left: 0;              /* 左の余白を消す */
+  margin: 0;
+    font-family: "vdl-megamaru", sans-serif;
+    color: #0077cc; 
+    font-size: 8px;
+  }
+
+   /* 画面幅が768px以上（タブレット・PCなど）のとき */
+   @media screen and (min-width: 768px) {
+    .tools-list li  {
+      font-size: 15px;
+    }
+  }
+
+  .characters {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 100px;
+  }
+
+  .character {
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .character img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    transition: transform 0.2s;
+  }
+
+  .character img:hover {
+    transform: scale(1.05);
+  }
+
+  .character-name {
+    font-family: "vdl-megamaru", sans-serif;
+    color: #0077cc;
+    margin-top: -5px;
+    font-size: 0.9rem;
+  }
+
+
+/* タップ・クリックしたときに沈む */
+.character-name:active {
+  transform: scale(0.95);
+  color: #005999;
+}
+
   /* サムネを正方形にする */
 .gallery-item img {
   width: 100%;
@@ -663,4 +807,25 @@ main{
   .x-button:hover {
     background-color: #0d8ddb;
     transform: scale(1.05);
+  }
+
+  .date{
+    font-family: "vdl-megamaru", sans-serif;
+    font-size: 10px;
+    color:#85baff;
+  }
+
+  .site-footer {
+   
+    background-color: #f9f9ff; 
+    color: #9d9d9f;             
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #ffffff;
+  }
+  
+  .site-footer p {
+    margin: 0;
+    font-family: 'メイリオ', 'Hiragino Kaku Gothic ProN', sans-serif;
   }

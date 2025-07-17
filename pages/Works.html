@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>おしごと - KIRABOSHI</title>
+ <!-- SwiperのCSS -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+ <!-- 外部CSS -->
+ <link rel="stylesheet" href="../style.css" />
+  <!--フォントメガ丸-->
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'vmj6bcq',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+</head>
+<body>
+  <div class="about-wrapper">
+    <h1 class="about-title">おしごと</h1>
+    <p class="text">ご依頼いただいた作品のまとめだよ。<br>いつもありがとうございます⭐︎</p>
+
+    <details>
+      <summary class="tools-summary">きらぼしへのご依頼について</summary>
+      <ul class="tools-list">
+        <li>ibisPaint X</li>
+        <li>Garage Band</li>
+        <li>After Effects</li>
+        <li>Blender</li>
+      </ul>
+    </details>
+    <details>
+      <summary class="tools-summary">ご依頼の料金について</summary>
+      <ul class="tools-list">
+        <li>ibisPaint X</li>
+        <li>Garage Band</li>
+        <li>After Effects</li>
+        <li>Blender</li>
+      </ul>
+    </details>
+
+   <!--（YouTube動画）-->
+<div class="video-wrapper">
+  <div class="video-label">最新の楽曲はこちら！</div> <!-- ← 追加 -->
+  
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/KQWNrEigWrM"
+      title="きらぼし動画"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p class="video-title">君のアイドル♡(31) / 重音テト</p>
+</div>
+    
+<div class="video-wrapper">
+  <div class="video-label">作り方解説動画だよ！</div> <!-- ← 追加 -->
+  
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed//ofoCg7wJVOY"
+      title="きらぼし動画"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p class="video-title">君のアイドル♡(31) / 重音テト</p>
+</div>
+    
+    <!-- モーダル（拡大表示用） -->
+    <div id="modal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modal-img">
+      <div class="memo-text" id="modal-memo"></div> <!-- ←追加 -->
+    </div>
+
+    </div>
+  </div>
+
+<!-- ホームにもどる -->
+<div class="about-buttons">
+  <a href="../index.html" class="about-btn">ホームにもどる</a>
+</div>
+<footer class="site-footer">
+  <p>© 2025 Kiraboshi Project.</p>
+</footer>
+
+  <!-- menu -->
+<div id="menu-button">
+  <img src="../images/menu-ShootingStar.PNG" alt="menu" class="hamburger"/>
+</div>
+
+<div id="menu-panel" class="menu-panel">
+  <a href="../index.html">ホーム</a>
+  <a href="../pages/Profile.html">プロフィール</a>
+  <a href="../pages/Works.html">おしごと</a>
+  <a href="../pages/Another.html">そのほか</a>
+</div>
+
+
+<script>
+  
+ // menu開閉（アニメーション付き）
+
+  const menuButton = document.getElementById("menu-button");
+  const menuPanel = document.getElementById("menu-panel");
+
+  menuButton.addEventListener("click", () => {
+    if (menuPanel.classList.contains("show")) {
+      menuPanel.classList.remove("show");
+      setTimeout(() => {
+        menuPanel.style.display = "none";
+      }, 300);
+    } else {
+      menuPanel.style.display = "block";
+      setTimeout(() => {
+        menuPanel.classList.add("show");
+      }, 10);
+    }
+  });
+
+ function openModal(src, memo) {
+  const modal = document.getElementById("modal");
+  document.getElementById("modal-img").src = src;
+  document.getElementById("modal-memo").textContent = memo; // メモを入れる
+
+  modal.style.display = "block";     
+  requestAnimationFrame(() => {
+    modal.classList.add("show");
+  });
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.classList.remove("show");
+  setTimeout(() => {
+    if (!modal.classList.contains("show")) {
+      modal.style.display = "none";
+    }
+  }, 400); // transitionと同じ時間
+}
+</script>
+
+</body>
+</html>
