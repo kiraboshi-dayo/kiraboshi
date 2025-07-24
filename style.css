@@ -32,6 +32,17 @@ main{
     width: 100%;
     height: auto;
     display: block;
+    opacity: 0;
+    transform: translateY(30px); 
+    animation: fadeSlideIn 1.5s ease-out forwards;
+  }
+  
+  /* アニメーションの内容 */
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (min-width: 768px) {
@@ -132,6 +143,8 @@ main{
       width: 100%;
     }
   }
+
+  
 
   /* ロゴ */
 .logo {
@@ -246,7 +259,60 @@ main{
     padding: 4px 10px;
   }
 }
+ 
+ /*トップのニュース*/
+ .news {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em;
+}
 
+.news h2 {
+  font-family: "vdl-megamaru", sans-serif;
+  font-size: 1.8em;
+  color: #4b6ecf;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.news-list {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.news-item {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.news-date {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.news-title {
+  font-weight: bold;
+  margin: 0.3em 0;
+}
+
+.news-text {
+  font-size: 0.95em;
+  color: #333;
+}
+
+.news-text a {
+  color: #6cc5ff;   /* 水色っぽいリンク色 */
+  text-decoration: underline;
+}
+
+.news-text a:hover {
+  color: #4da9e0;   /* ホバー時に少し濃く */
+}
+ 
   
   /* SNSリンク右側縦配置 */
   a i {
@@ -539,7 +605,7 @@ main{
   
   .about-title {
     font-family: "vdl-megamaru", sans-serif;
-    font-size: 25px;
+    font-size: 28px;
     margin: 80px ;
     color:#85baff;
     margin-bottom: 20px;
@@ -547,7 +613,7 @@ main{
 
   .about-subtitle {
     font-family: "vdl-megamaru", sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     margin: 10px ;
     color:#85baff;
     margin-bottom: 20px;
@@ -567,7 +633,7 @@ main{
 
 .text{
   font-family: "vdl-megamaru", sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   color:#85baff;
   margin-bottom: 40px;
 }
@@ -634,8 +700,21 @@ main{
 
   .profile-text {
     font-family: "vdl-megamaru", sans-serif;
-    font-size: 8px;
+    font-size: 9px;
     flex: 1;
+  }
+
+  .period {
+    display: flex;           
+    align-items: flex-start; 
+    margin: 4px 0;   
+    margin-top: 1rem;        
+  }
+  
+  .year {
+    width: 4em;             
+    text-align: right;     
+    margin-right: 0.5em;    
   }
 
   @media screen and (min-width: 768px) {
@@ -676,6 +755,7 @@ main{
     font-family: "vdl-megamaru", sans-serif;
     color: #0077cc; 
     font-size: 8px;
+    margin-bottom: 1em;
   }
 
    /* 画面幅が768px以上（タブレット・PCなど）のとき */
@@ -825,7 +905,183 @@ main{
     border-top: 1px solid #ffffff;
   }
   
-  .site-footer p {
-    margin: 0;
-    font-family: 'メイリオ', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+ /*キャラ紹介*/
+  .character-profile {
+    padding: 20px;
   }
+  
+  .main-image {
+    width: 120%; 
+    max-width: none; 
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: -10%; 
+  }
+
+   /* 画面幅が768px以上（タブレット・PCなど）のとき */
+   @media screen and (min-width: 768px) {
+    .main-image  {
+      width: 80%; 
+    }
+  }
+  
+  .faces {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .faces img {
+    width: 80px;
+    height: auto;
+    border-radius: 100px;
+    background: white;
+    padding: 5px;
+  }
+  
+  .text .name {
+    font-size: 1.8em;
+    margin: 10px 0 5px;
+    color: #ff66cc;
+  }
+  
+  .text .cv {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .text .description {
+    color: #4b6ecf;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  .text .description-hao {
+    color: #C578DC;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+
+/*以下おしごと*/
+details {
+  margin-bottom: 1em;
+}
+
+summary {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  color: #0077cc;
+  font-size: 1em;
+  outline: none;
+}
+
+details p {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  margin: 0.8em 0 0 0;
+  font-size: 0.8em;
+  color: #0077cc;
+  line-height: 2;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-bottom: 4em;
+}
+
+.work {
+  max-width: 800px;
+  margin: 20px auto;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+  text-align: center;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.work-video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.work-text-box {
+  display: block; 
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: fit-content;       
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.work-title {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+  color: #85baff;
+}
+
+.work-desc {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #85baff;
+}
+
+video {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/*以上おしごと*/
+
+/*以下その他*/
+.content {
+  font-family: "vdl-megamaru", sans-serif;
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 1em;
+}
+
+.content h2 {
+  font-size: 1.4em;
+  text-align: center;
+  margin-bottom: 1em;
+  color: #85baff;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.item-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1em;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.item-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5em;
+}
+
+.item-title {
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.item-link {
+  color: #6cc5ff;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 0.3em;
+}
+
+.item-link:hover {
+  color: #4da9e0;
+}
+  /*以上その他*/

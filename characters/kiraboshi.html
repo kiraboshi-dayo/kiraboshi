@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キャラクター紹介 - きらぼし</title>
+  <link rel="stylesheet" href="style.css" />
+
+<!-- 外部CSS -->
+<link rel="stylesheet" href="../style.css" />
+<!--フォントメガ丸-->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'vmj6bcq',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+</head>
+
+<body>
+<!-- ロゴ -->
+<div class="logo">
+<img src="../images/kiraboshi.logo.PNG" alt="きらぼしサイト">
+</div>
+
+
+<div class="about-wrapper">
+  <h1 class="about-title">創作キャラ紹介</h1>
+
+  <main class="character-profile">
+    <img src="../images/kiraboshi.PNG" alt="きらぼし" class="main-image">
+
+    <div class="faces">
+      <img src="../images/kiraboshi-icon.PNG" alt="表情1">
+      <img src="../images/kiraboshi-face2.PNG" alt="表情2">
+      <img src="../images/kiraboshi-face3.PNG" alt="表情3">
+    </div>
+
+    <div class="text">
+      <h2 class="name">きらぼし</h2>
+      <p class="cv">CV. ???</p>
+      <p class="description">
+        宇宙人で、見た目は12歳の女の子。いろいろあって好ちゃんという女の子の家に居候している。<br>
+        人間や、地球での生活に興味津々で、元気いっぱい。言動が幼いのと、宇宙人ならではの、たまに誰も気にしたことがないようなことに気付く鋭い視点をもっている。
+      </p>
+    </div>
+  </main>
+
+  <div class="characters">
+    <a href="../characters/hao.html" class="character">
+      <img src="../images/hao-icon.PNG" alt="はお">
+      <div class="character-name">はお</div>
+    </a>
+    <a href="../characters/Another-chan.html" class="character">
+      <img src="../images/Another-chan-icon.PNG" alt="Another">
+      <div class="character-name">あなこの</div>
+    </a>
+  </div>
+</div>
+
+  <!-- プロフィールにもどる -->
+  <div class="about-buttons">
+    <a href="../pages/Profile.html" class="about-btn">プロフィールにもどる</a>
+  </div>
+  <footer class="site-footer">
+    <p>© 2025 Kiraboshi Project.</p>
+  </footer>
+  
+
+   <!-- menu -->
+<div id="menu-button">
+  <img src="../images/menu-ShootingStar.PNG" alt="menu" class="hamburger"/>
+</div>
+
+<div id="menu-panel" class="menu-panel">
+  <a href="../index.html">ホーム</a>
+  <a href="../pages/Profile.html">プロフィール</a>
+  <a href="../pages/Works.html">おしごと</a>
+  <a href="../pages/Another.html">そのほか</a>
+</div>
+
+<script>
+  
+ // menu開閉（アニメーション付き）
+
+  const menuButton = document.getElementById("menu-button");
+  const menuPanel = document.getElementById("menu-panel");
+
+  menuButton.addEventListener("click", () => {
+    if (menuPanel.classList.contains("show")) {
+      menuPanel.classList.remove("show");
+      setTimeout(() => {
+        menuPanel.style.display = "none";
+      }, 300);
+    } else {
+      menuPanel.style.display = "block";
+      setTimeout(() => {
+        menuPanel.classList.add("show");
+      }, 10);
+    }
+  });
+
+ function openModal(src, memo) {
+  const modal = document.getElementById("modal");
+  document.getElementById("modal-img").src = src;
+  document.getElementById("modal-memo").textContent = memo; // メモを入れる
+
+  modal.style.display = "block";     
+  requestAnimationFrame(() => {
+    modal.classList.add("show");
+  });
+}
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.classList.remove("show");
+  setTimeout(() => {
+    if (!modal.classList.contains("show")) {
+      modal.style.display = "none";
+    }
+  }, 400); // transitionと同じ時間
+}
+</script>
+
+</body>
+</html>
