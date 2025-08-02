@@ -57,7 +57,7 @@ main{
     white-space: nowrap;
     position: absolute;
     top: 10%; 
-    left: 60%; /* 横の位置を「画像の右側」に */
+    left: 60%; 
     transform: translateX(0%); 
     color: #4b6ecf;
     max-width: 80%;
@@ -79,7 +79,7 @@ main{
   @media (max-width: 768px) {
     .caption-overlay {
       top: auto;
-      bottom: 5%;
+      bottom: 1%;
       right: 5%;
       left: 5%;
       max-width: 90%;
@@ -259,7 +259,50 @@ main{
     padding: 4px 10px;
   }
 }
- 
+  /*トップのお題箱*/
+  .marshmallow-box {
+    text-align: center;
+    margin: 30px auto;
+  }
+  
+  .marshmallow-box a {
+    font-family: "vdl-megamaru", sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #ff8cac; 
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(255, 140, 172, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .marshmallow-box a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(255, 140, 172, 0.5);
+  }
+  
+  .marshmallow-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .marshmallow-box a {
+      padding: 40px 48px;
+      font-size: 1.3rem;
+    }
+  
+    .marshmallow-icon {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
  /*トップのニュース*/
  .news {
   max-width: 600px;
@@ -896,7 +939,6 @@ main{
   }
 
   .site-footer {
-   
     background-color: #f9f9ff; 
     color: #9d9d9f;             
     text-align: center;
