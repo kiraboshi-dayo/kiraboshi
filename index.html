@@ -26,16 +26,27 @@
   <canvas id="shootingStars"></canvas>
   <main class="character-wrapper">
     <div class="character-container">
+      <!-- PC用 背景earth -->
+      <img src="images/earth.PNG" alt="背景" class="bg-earth" />
+  
+      <!-- キャラクター画像 -->
       <picture>
+        <!-- PC用 -->
         <source srcset="images/character-large.PNG" media="(min-width: 768px)">
+        <!-- スマホ用 -->
         <img src="images/character.PNG" alt="キャラクター" class="character-img" />
       </picture>
+  
       <div class="caption-overlay">
         <p class="caption rise-up">ものづくりとこの星がだいすき！</p>
-        <p class="caption2 rise-up">イラスト、音楽、MV、時にはお菓子作りなどなど…。<br>宇宙からやってきたクリエイター、『きらぼし』のサイト。</p>
+        <p class="caption2 rise-up">
+          イラスト、音楽、MV、時にはお菓子作りなどなど…。<br>
+          宇宙からやってきたクリエイター、『きらぼし』のサイト。
+        </p>
       </div>
     </div>
   </main>
+  
   <!-- ロゴ -->
   <div class="logo">
     <img src="images/kiraboshi.logo.PNG" alt="きらぼしサイト">
@@ -66,14 +77,14 @@
   <h2>NEWS</h2>
   <div class="news-list">
     <div class="news-item">
-      <p class="news-date">2025.07.25</p>
+      <p class="news-date">2025.08.15</p>
       <p class="news-title">きらぼし公式Webサイトが誕生！</p>
-      <p class="news-text">きらぼしの新作の情報が閲覧できるよ！ぜひチェックしてね！</p>
+      <p class="news-text">最新の情報が閲覧できるよ！ぜひチェックしてね！<br>感想は<a href="https://twitter.com/hashtag/きらぼし観測中" >#きらぼし観測中</a>で教えてね⭐︎</p>
     </div>
     <div class="news-item">
       <p class="news-date">2025.07.01</p>
       <p class="news-title">ボカデュオ2025のお知らせ</p>
-      <p class="news-text">「星降るティールーム」チーム参加しました。楽曲「Sweet Night♡」<a href="https://www.youtube.com/watch?v=85FylRd_4BU" target="_blank">こちら</a>から見てね♪</p>
+      <p class="news-text">「星降るティールーム」チーム参加しました。楽曲「Sweet Night♡」<a href="https://www.youtube.com/watch?v=85FylRd_4BU" >こちら</a>から見てね♪</p>
     </div>
     <div class="news-item">
       <p class="news-date">2025.04.19</p>
@@ -102,10 +113,10 @@
 
   <!-- SNSリンク -->
 <div class="sns-links">
-  <a href="https://x.com/kiraboshi_dayo?s=21&t=nBg6D8IdfzuOT_GNT5nRpw"><i class="fab fa-x-twitter"></i></a>
-  <a href="https://youtube.com/@kiraboshi_dayo?si=jPh7ESLiHBsn_Y8I"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.tiktok.com/@kiraboshi_dayo?_t=ZS-8yWMWFAxsPw&_r=1"><i class="fab fa-tiktok"></i></a>
-  <a href="https://note.com/hao_hao_conoca"><i class="fas fa-book-open"></i></a>
+  <a href="https://x.com/kiraboshi_dayo?s=21&t=nBg6D8IdfzuOT_GNT5nRpw"><i class="fa-brands fa-x-twitter"></i></a>
+  <a href="https://youtube.com/@kiraboshi_dayo?si=jPh7ESLiHBsn_Y8I"><i class="fa-brands fa-youtube"></i></a>
+  <a href="https://www.tiktok.com/@kiraboshi_dayo?_t=ZS-8yWMWFAxsPw&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+  <a href="https://note.com/hao_hao_conoca"><i class="fa-solid fa-book-open"></i></a>
 </div>
 
 <!-- お手紙アイコン -->
@@ -156,13 +167,8 @@ window.addEventListener("load", function () {
   links.classList.remove('hidden');
 }
 
-    // menu開閉（アニメーション付き）
-
-  const menuButton = document.getElementById("menu-button");
-  const menuPanel = document.getElementById("menu-panel");
-
-    // 5回以上タップすると...//
-let clickCount = 0;
+   // 5回以上タップすると...！ふふ、気づいてくれた？//
+   let clickCount = 0;
   const character = document.getElementById("letter");
 
   character.addEventListener("click", () => {
@@ -170,7 +176,16 @@ let clickCount = 0;
     if (clickCount >= 5) {
       character.src = "images/letter-for-you--.PNG";
     }
+    if (clickCount >= 8) {
+      character.src = "images/letter-for-you---.PNG";
+    }
   });
+  
+
+    // menu開閉（アニメーション付き）
+
+    const menuButton = document.getElementById("menu-button");
+  const menuPanel = document.getElementById("menu-panel");
 
   menuButton.addEventListener("click", () => {
     if (menuPanel.classList.contains("show")) {
