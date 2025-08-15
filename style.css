@@ -2,22 +2,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ccf0ff;
+  background-color: #ccf0ff; 
   font-family: 'Arial', sans-serif;
   overflow-x: hidden;
 }
-/* 夜空背景 */
-body.night-mode {
-background-color: #254783; 
-}
-@keyframes fadeToNight {
-from { background-color: #ccf0ff; }
-to   { background-color: #254783; }
-}
 
-html.night-mode, body.night-mode {
-will-change: background-color;
-transition: background-color 2s ease;
+body.night-mode {
+  background-image: url('images/night-background.jpg'); /* 夜用画像 */
+  background-size: cover;
+  background-position: center;
 }
 
 main{

@@ -49,8 +49,7 @@
   
   <!-- ロゴ -->
   <div class="logo">
-    <img src="images/kiraboshi.logo.PNG" id="site-logo"
-    alt="きらぼしサイト">
+    <img src="images/kiraboshi.logo.PNG" id="site-logo" alt="きらぼしサイト">
   </div>
 
  <!-- クロスフェード動画（最新YouTube動画）-->
@@ -271,27 +270,23 @@ function animate() {
 }
 
 animate();
-
 document.addEventListener("DOMContentLoaded", () => {
-  const logo = document.getElementById("site-logo"); // ロゴ画像のID
+  const logo = document.getElementById("site-logo");
   let clickCount = 0;
   let resetTimer;
 
   logo.addEventListener("click", () => {
     clickCount++;
 
-    // 3秒以内に3回押したら発動
     clearTimeout(resetTimer);
     resetTimer = setTimeout(() => clickCount = 0, 3000);
 
     if (clickCount === 3) {
-      document.body.classList.toggle("night-mode");
+      document.body.classList.toggle("night-mode"); // 昼→夜画像に切替
       clickCount = 0;
     }
   });
 });
-
-
 
   </script>
 
