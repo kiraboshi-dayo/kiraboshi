@@ -49,7 +49,8 @@
   
   <!-- ロゴ -->
   <div class="logo">
-    <img src="images/kiraboshi.logo.PNG" alt="きらぼしサイト">
+    <img src="images/kiraboshi.logo.PNG" id="site-logo"
+    alt="きらぼしサイト">
   </div>
 
  <!-- クロスフェード動画（最新YouTube動画）-->
@@ -270,6 +271,26 @@ function animate() {
 }
 
 animate();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.getElementById("site-logo"); // ロゴ画像のID
+  let clickCount = 0;
+  let resetTimer;
+
+  logo.addEventListener("click", () => {
+    clickCount++;
+
+    // 3秒以内に3回押したら発動
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => clickCount = 0, 3000);
+
+    if (clickCount === 3) {
+      document.body.classList.toggle("night-mode");
+      clickCount = 0;
+    }
+  });
+});
+
 
 
   </script>
